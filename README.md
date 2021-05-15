@@ -1,1 +1,2 @@
-# readit
+# Readit
+Basic reddit clone
