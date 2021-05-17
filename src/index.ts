@@ -23,6 +23,10 @@ const main = async () => {
         // Used to access stuff in orm object
         context: () => ({ em: orm.em })
     });
+    
+    // Insert a post
+    // const post = orm.em.create(Post, { title: 'my first post' });
+    // await orm.em.persistAndFlush(post);
 
     // Endpoint for our express server
     app.get('/', (_, res) => {
