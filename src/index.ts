@@ -8,6 +8,7 @@ import { ApolloServer } from 'apollo-server-express';
 import { HelloResolver } from "./resolvers/hello";
 import { buildSchema } from 'type-graphql';
 import { PostResolver } from "./resolvers/post";
+import { UserResolver } from './resolvers/user';
 
 const main = async () => {
     // Migrations for database schema
@@ -17,7 +18,7 @@ const main = async () => {
     const app = express();
     const apolloServer = new ApolloServer({
         schema: await buildSchema({
-            resolvers: [HelloResolver, PostResolver],
+            resolvers: [HelloResolver, PostResolver, UserResolver],
             validate: false
         }),
         // Used to access stuff in orm object
